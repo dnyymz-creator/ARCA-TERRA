@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arca Terra — Arquitectura & Desarrollo Residencial Premium</title>
+  <meta name="description" content="Estudio de arquitectura y desarrollo residencial contemporáneo. Espacios escultóricos donde la luz, la materia y el paisaje existen en perfecto equilibrio.">
+
+  <!-- Tipografía Técnica Monospace -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Filtros SVG para Refracción Líquida y Cromo 2026 -->
+  <svg width="0" height="0" class="svg-filters" aria-hidden="true">
+    <filter id="liquid-glass" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="3" seed="5" result="noise">
+        <animate attributeName="baseFrequency" dur="20s" values="0.012 0.018;0.018 0.012;0.012 0.018" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+
+    <filter id="liquid-ripple" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="turbulence" baseFrequency="0.02 0.03" numOctaves="2" seed="8" result="ripple">
+        <animate attributeName="baseFrequency" dur="14s" values="0.02 0.03;0.028 0.018;0.02 0.03" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="ripple" scale="22" xChannelSelector="B" yChannelSelector="R"/>
+    </filter>
+  </svg>
+
+  <!-- NAVEGACIÓN FIJA EN VIDRIO FROSTED (Referencia Visual Exacta) -->
+  <header class="header-nav-wrapper" id="navbar">
+    <nav class="nav-glass-bar">
+      <ul class="nav-links left-links">
+        <li><a href="#hero" class="nav-link active">INICIO</a></li>
+        <li><a href="#about" class="nav-link">NOSOTROS</a></li>
+        <li><a href="#services" class="nav-link">SERVICIOS</a></li>
+      </ul>
+
+      <!-- Monograma Arquitectónico Central -->
+      <a href="#hero" class="nav-logo" aria-label="Arca Terra Inicio">
+        <svg class="monogram-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="7" y="7" width="15" height="15" rx="3" transform="rotate(45 7 7)" stroke="currentColor" stroke-width="1.8"/>
+          <rect x="19" y="7" width="15" height="15" rx="3" transform="rotate(45 19 7)" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <span class="nav-brand-text">arca terra</span>
+      </a>
+
+      <ul class="nav-links right-links">
+        <li><a href="#why-us" class="nav-link">FILOSOFÍA</a></li>
+        <li><a href="#portfolio" class="nav-link">PORTAFOLIO</a></li>
+        <li><a href="#contact" class="nav-link">CONTACTO</a></li>
+      </ul>
+
+      <!-- Botón Menú Móvil -->
+      <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileDrawer">
+        <span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Menú Desplegable Móvil -->
+    <div class="mobile-menu-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-inner glass-panel-heavy">
+        <a href="#hero" class="mobile-link">INICIO</a>
+        <a href="#about" class="mobile-link">NOSOTROS</a>
+        <a href="#services" class="mobile-link">SERVICIOS</a>
+        <a href="#why-us" class="mobile-link">FILOSOFÍA</a>
+        <a href="#portfolio" class="mobile-link">PORTAFOLIO</a>
+        <a href="#contact" class="mobile-link">CONTACTO</a>
+        <div class="mobile-drawer-footer">
+          <p class="mono-tag">ARCA TERRA ARQUITECTOS © 2026</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==============================================
+       HERO PRINCIPAL (Panel Superior REFERENCIA.jpg)
+       ============================================== -->
+  <section id="hero" class="hero-section">
+    <!-- Fondo Arquitectónico con Parallax -->
+    <div class="hero-bg-container" id="heroBg">
+      <img src="IMAGENES/HERO PRINCIPAL.jpg" alt="Arca Terra — Residencia Escultórica de Alta Gama" class="hero-bg-img" id="heroImg">
+      <div class="hero-vignette"></div>
+      <div class="hero-noise"></div>
+    </div>
+
+    <div class="hero-content-wrapper">
+      <!-- Encabezado Principal y Credenciales Flotantes -->
+      <div class="hero-header-row">
+        <div class="hero-brand-block" data-reveal="fade-up">
+          <h1 class="hero-main-title">
+            <span class="title-word brand-first-word arca-word">arca</span>
+            <span class="title-sub-tag">arquitectura</span>
+            <span class="title-word brand-second-word terra-word">terra</span>
+          </h1>
+          <div class="hero-tagline-wrap">
+            <span class="hero-asterisk">*</span>
+            <p class="hero-tagline">UNA FORMA ESCULTÓRICA QUE TRASCIENDE LO ORDINARIO</p>
+          </div>
+        </div>
+
+        <!-- Tarjetas Flotantes en Vidrio Frosted y Cromo Líquido (Referencia Exacta 2 Badges) -->
+        <div class="hero-stats-badges" data-reveal="fade-left">
+          <!-- Tarjeta 1: Años de Trayectoria -->
+          <div class="glass-badge-card glass-frost-1" data-tilt>
+            <div class="badge-specular-edge"></div>
+            <div class="badge-content">
+              <span class="badge-number">15</span>
+              <span class="badge-label">Años de Trayectoria</span>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Residencias Entregadas (Relieve Cromo Líquido) -->
+          <div class="glass-badge-card glass-liquid-chrome" data-tilt>
+            <div class="badge-specular-edge"></div>
+            <div class="liquid-chrome-surface"></div>
+            <div class="badge-content">
+              <span class="badge-number">120</span>
+              <span class="badge-label">Residencias Entregadas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pestaña Arquitectónica Curva con Botón Integrado (REFERENCIA.jpg Exacta) -->
+    <div class="hero-shelf-cutout" data-reveal="fade-up">
+      <svg class="shelf-curve-svg" viewBox="0 0 1440 70" fill="none" preserveAspectRatio="none">
+        <path d="M0,70 L0,20 Q360,20 540,20 Q570,20 590,45 Q610,70 650,70 L790,70 Q830,70 850,45 Q870,20 900,20 Q1080,20 1440,20 L1440,70 Z" fill="#ffffff"/>
+      </svg>
+      <div class="hero-bottom-shelf">
+        <a href="#contact" class="pill-cta-btn glass-pill-cta" id="heroCtaBtn">
+          <span class="cta-text">Iniciar Proyecto</span>
+          <span class="cta-arrow-circle">
+            <svg viewBox="0 0 20 20" fill="none" class="arrow-svg">
+              <path d="M5.5 14.5L14.5 5.5M14.5 5.5H7.5M14.5 5.5V12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       NOSOTROS / ABOUT US (Panel Central REFERENCIA.jpg)
+       ============================================== -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <!-- Encabezado con Tipografía Monumental Escultórica -->
+      <div class="about-title-row" data-reveal="fade-up">
+        <div class="about-title-block">
+          <h2 class="editorial-giant-heading">nosotros</h2>
+          <div class="editorial-sub-tags">
+            <span>desarrollo</span>
+            <span>premium</span>
+          </div>
+        </div>
+        <div class="about-asterisk-mark">*</div>
+      </div>
+
+      <!-- Frase Editorial con Miniaturas Píldora Embebidas en la Lectura -->
+      <div class="about-statement-wrapper" data-reveal="fade-up">
+        <p class="about-statement-text">
+          DESARROLLAMOS <span class="highlight-word">RESIDENCIAS CONTEMPORÁNEAS</span> DONDE LA ARQUITECTURA, LA LUZ Y EL
+          <span class="inline-pill-photo" data-title="Luz natural y terrazas en cantiléver">
+            <img src="IMAGENES/1.jpg" alt="Detalle de residencia sobre acantilado" class="pill-thumb">
+          </span>
+          PAISAJE COEXISTEN EN <span class="highlight-accent">PERFECTO</span>
+          <span class="inline-pill-photo" data-title="Precisión en concreto aparente">
+            <img src="IMAGENES/2.jpg" alt="Proceso constructivo y pureza estructural" class="pill-thumb">
+          </span>
+          EQUILIBRIO. NUESTRA VISIÓN TRASCIENDE CONSTRUIR VIVIENDAS — CREAMOS ESPACIOS QUE ELEVAN EL HABITAR
+          <span class="statement-slashes">///</span>
+        </p>
+      </div>
+
+      <!-- Cuadrícula de Fotografías Redondeadas y Columnas Editoriales -->
+      <div class="about-dual-grid" data-reveal="fade-up">
+        <!-- Dos Fotografías de Obra en Formato Apaisado (Sin puntitos en las etiquetas) -->
+        <div class="about-photos-duo">
+          <div class="rounded-photo-card card-zoom-effect" data-tilt>
+            <img src="IMAGENES/HERO PRINCIPAL.jpg" alt="Residencia de concreto monolítico y cancelería oscura" class="editorial-img">
+            <div class="photo-card-glass-tag">
+              <span>Residencia Bruma — CDMX</span>
+            </div>
+          </div>
+          <div class="rounded-photo-card card-zoom-effect" data-tilt>
+            <img src="IMAGENES/2.jpg" alt="Obra de concreto y precisión constructiva en proceso" class="editorial-img">
+            <div class="photo-card-glass-tag">
+              <span>Estructura & Proceso — Obra Activa</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columnas Editoriales de Filosofía -->
+        <div class="about-editorial-columns">
+          <div class="editorial-col">
+            <p class="col-text">
+              Al integrar tecnologías de vanguardia y soluciones bioclimáticas sostenibles, garantizamos plusvalía patrimonial duradera para propietarios e inversionistas. Cada volumen responde con intuición a su topografía, orientación solar y corrientes de viento.
+            </p>
+          </div>
+          <div class="editorial-col">
+            <p class="col-text">
+              Uniendo visión, precisión técnica y maestría artesanal, concebimos residencias excepcionales que reflejan solidez, calidad y distinción perdurable. Eliminamos lo superfluo para celebrar la materialidad auténtica y el lujo silencioso.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       POR QUÉ ELEGIRNOS / FILOSOFÍA (Panel 3 REFERENCIA.jpg)
+       ============================================== -->
+  <section id="why-us" class="why-section">
+    <!-- Escena Arquitectónica de Fondo -->
+    <div class="why-backdrop-container">
+      <img src="IMAGENES/1.jpg" alt="Villa Arca Terra suspendida sobre el acantilado" class="why-backdrop-img" id="whyBgImg">
+      <div class="why-overlay-gradient"></div>
+    </div>
+
+    <div class="container why-content-layer">
+      <!-- Encabezado con Acento Bronce Idéntico a REFERENCIA.jpg -->
+      <div class="why-title-wrap" data-reveal="fade-up">
+        <div class="why-title-box">
+          <span class="why-accent-title">por qué</span>
+          <div class="why-brand-title">
+            <span class="bronze-gradient-text">arca</span>
+            <span class="white-text">terra</span>
+          </div>
+          <span class="why-sublabel">distinción arquitectónica</span>
+        </div>
+        <div class="why-slashes">///</div>
+      </div>
+
+      <!-- Tarjetas Flotantes Glassmorphic Escalonadas sobre la Escena -->
+      <div class="why-floating-cards-grid">
+        <!-- Tarjeta 1: Trayectoria (Vidrio Líquido Superior) -->
+        <div class="floating-glass-tile tile-frost-liquid" data-reveal="fade-up" data-tilt>
+          <div class="tile-specular-border"></div>
+          <div class="liquid-refraction-sheen"></div>
+          <div class="tile-inner">
+            <span class="tile-index mono-tag">01 / TRAYECTORIA</span>
+            <p class="tile-copy">Experiencia arquitectónica perfeccionada tras años de práctica rigurosa y vocación de excelencia espacial.</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2: Precisión (Vidrio Sutil Minimalista) -->
+        <div class="floating-glass-tile tile-glass-outline" data-reveal="fade-up" data-delay="100" data-tilt>
+          <div class="tile-specular-border"></div>
+          <div class="tile-inner">
+            <span class="tile-index mono-tag">02 / PRECISIÓN</span>
+            <p class="tile-copy">Residencias ejecutadas con absoluta claridad conceptual, rigor estructural y exactitud milimétrica.</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3: Visión a Medida (Tarjeta Blanca Sólida) -->
+        <div class="floating-glass-tile tile-solid-white" data-reveal="fade-up" data-delay="200" data-tilt>
+          <div class="tile-inner">
+            <span class="tile-index mono-tag text-dark-muted">03 / A MEDIDA</span>
+            <p class="tile-copy text-dark">Cada residencia se moldea en torno a su visión de vida, aspiraciones estéticas y bienestar sensorial.</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 4: Materialidad (Relieve Cromo Bronce) -->
+        <div class="floating-glass-tile tile-liquid-metallic" data-reveal="fade-up" data-delay="300" data-tilt>
+          <div class="tile-specular-border"></div>
+          <div class="metallic-ripple-bg"></div>
+          <div class="tile-inner">
+            <span class="tile-index mono-tag">04 / MATERIALIDAD</span>
+            <p class="tile-copy">Selección de texturas nobles, travertinos y concreto entablillado que perduran más allá de modas efímeras.</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 5: Transparencia (Vidrio Ahumado con Monograma) -->
+        <div class="floating-glass-tile tile-dark-liquid" data-reveal="fade-up" data-delay="400" data-tilt>
+          <div class="tile-specular-border"></div>
+          <div class="smoked-glass-surface"></div>
+          <div class="tile-inner">
+            <div class="tile-icon-row">
+              <span class="tile-index mono-tag">05 / TRANSPARENCIA</span>
+              <svg class="tile-monogram-small" viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="4" width="10" height="10" rx="2" transform="rotate(45 4 4)" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="12" y="4" width="10" height="10" rx="2" transform="rotate(45 12 4)" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <p class="tile-copy">Del concepto inicial a la entrega de llaves: control presupuestario riguroso y certidumbre en cada etapa constructiva.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Declaración Inferior de Cierre -->
+      <div class="why-footer-tagline">
+        <p class="micro-statement">Arquitectura trascendente que perdura más allá de modas y temporadas.</p>
+      </div>
+    </div>
+
+    <!-- Pestaña Inferior de Transición -->
+    <div class="why-shelf-cutout" aria-hidden="true">
+      <svg class="shelf-curve-svg-inverted" viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none">
+        <path d="M0,0 L0,40 Q360,40 540,40 Q570,40 590,15 Q610,0 650,0 L790,0 Q830,0 850,15 Q870,40 900,40 Q1080,40 1440,40 L1440,0 Z" fill="#111317"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       SERVICIOS CLAVE
+       ============================================== -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <div class="section-badge-header" data-reveal="fade-up">
+        <span class="mono-badge">DISCIPLINAS & CAPACIDADES</span>
+        <h2 class="section-headline">Servicios de Vanguardia</h2>
+        <p class="section-subtext">Un modelo integral de arquitectura donde el diseño conceptual, la ingeniería estructural y el interiorismo dialogan bajo una misma dirección artística.</p>
+      </div>
+
+      <div class="services-accordion-grid">
+        <!-- Servicio 01 -->
+        <div class="service-card glass-panel-service active" data-reveal="fade-up">
+          <div class="service-card-top">
+            <span class="service-num">01</span>
+            <div class="service-title-wrap">
+              <h3 class="service-title">Diseño Arquitectónico & Master Planning</h3>
+              <p class="service-category">Concepto / Planos Ejecutivos / Modelado BIM 3D</p>
+            </div>
+            <div class="service-pill-indicator">
+              <span>EXPLORAR</span>
+            </div>
+          </div>
+
+          <div class="service-card-body">
+            <div class="service-text-content">
+              <p class="service-desc">
+                Desarrollamos proyectos residenciales y villas unifamiliares con un diálogo profundo con su entorno. Estudios solares computarizados, análisis bioclimático y modelado paramétrico que garantizan un confort térmico natural y una estética monumental.
+              </p>
+              <ul class="service-deliverables">
+                <li><span class="check-mark">✓</span> Levantamiento topográfico y volumetrías paramétricas</li>
+                <li><span class="check-mark">✓</span> Renderizado fotorrealista 8K y recorridos virtuales inmersivos</li>
+                <li><span class="check-mark">✓</span> Gestión integral de licencias y normativas urbanas</li>
+              </ul>
+            </div>
+            <div class="service-preview-thumb">
+              <img src="IMAGENES/HERO PRINCIPAL.jpg" alt="Diseño arquitectónico residencial contemporáneo" class="service-img">
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio 02 -->
+        <div class="service-card glass-panel-service" data-reveal="fade-up" data-delay="100">
+          <div class="service-card-top">
+            <span class="service-num">02</span>
+            <div class="service-title-wrap">
+              <h3 class="service-title">Construcción & Project Management</h3>
+              <p class="service-category">Ingeniería Estructural / Obra Civil / Dirección de Obra</p>
+            </div>
+            <div class="service-pill-indicator">
+              <span>EXPLORAR</span>
+            </div>
+          </div>
+
+          <div class="service-card-body">
+            <div class="service-text-content">
+              <p class="service-desc">
+                Materializamos el plano con rigor milimétrico. Control directo sobre la mezcla y curado del concreto aparente, carpinterías de autor, instalaciones domóticas y supervisión ininterrumpida para cumplir presupuestos fijos sin sorpresas.
+              </p>
+              <ul class="service-deliverables">
+                <li><span class="check-mark">✓</span> Bitácora técnica y auditoría semanal de control de calidad</li>
+                <li><span class="check-mark">✓</span> Selección y curaduría de canteras, acero y maderas nobles</li>
+                <li><span class="check-mark">✓</span> Cronograma Gantt y garantía de entrega a precio cerrado</li>
+              </ul>
+            </div>
+            <div class="service-preview-thumb">
+              <img src="IMAGENES/2.jpg" alt="Construcción estructural de concreto aparente" class="service-img">
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio 03 -->
+        <div class="service-card glass-panel-service" data-reveal="fade-up" data-delay="200">
+          <div class="service-card-top">
+            <span class="service-num">03</span>
+            <div class="service-title-wrap">
+              <h3 class="service-title">Interiorismo, Iluminación & Paisajismo</h3>
+              <p class="service-category">FF&E / Curaduría de Arte / Paisajismo / Domótica</p>
+            </div>
+            <div class="service-pill-indicator">
+              <span>EXPLORAR</span>
+            </div>
+          </div>
+
+          <div class="service-card-body">
+            <div class="service-text-content">
+              <p class="service-desc">
+                La arquitectura culmina en el tacto y la atmósfera lumínica. Diseñamos piezas de mobiliario a la medida, seleccionamos textiles orgánicos, piedras sinterizadas y calculamos escenas lumínicas cálidas (2700K) que transforman el ambiente al caer la tarde.
+              </p>
+              <ul class="service-deliverables">
+                <li><span class="check-mark">✓</span> Especificación y adquisición global de piezas de diseño exclusivo</li>
+                <li><span class="check-mark">✓</span> Confort acústico y automatización inteligente (Lutron / KNX)</li>
+                <li><span class="check-mark">✓</span> Paisajismo bioclimático con vegetación endémica y bajo consumo de agua</li>
+              </ul>
+            </div>
+            <div class="service-preview-thumb">
+              <img src="IMAGENES/1.jpg" alt="Interiorismo y terrazas habitables sobre el mar" class="service-img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       PORTAFOLIO INMERSIVO
+       ============================================== -->
+  <section id="portfolio" class="portfolio-section">
+    <div class="container">
+      <div class="portfolio-header-flex" data-reveal="fade-up">
+        <div>
+          <span class="mono-badge">OBRAS DESTACADAS</span>
+          <h2 class="section-headline">Portafolio Selecto</h2>
+        </div>
+
+        <!-- Filtros Glassmorphic -->
+        <div class="portfolio-filters glass-filter-bar">
+          <button class="filter-pill active" data-filter="all">TODOS</button>
+          <button class="filter-pill" data-filter="residencial">RESIDENCIAL</button>
+          <button class="filter-pill" data-filter="costero">COSTERO</button>
+          <button class="filter-pill" data-filter="proceso">EN PROCESO</button>
+        </div>
+      </div>
+
+      <!-- Cuadrícula de Proyectos -->
+      <div class="portfolio-grid">
+        <!-- Proyecto 1: Casa Bruma -->
+        <article class="project-card" data-category="residencial" data-reveal="fade-up">
+          <div class="project-media-wrap" data-tilt>
+            <img src="IMAGENES/HERO PRINCIPAL.jpg" alt="Residencia Casa Bruma — Ciudad de México" class="project-img">
+            <div class="project-overlay-glass">
+              <div class="project-top-meta">
+                <span class="glass-pill-sm">850 M²</span>
+                <span class="glass-pill-sm">CDMX, MÉXICO</span>
+              </div>
+              <div class="project-bottom-info">
+                <h3 class="project-title">Casa Bruma</h3>
+                <p class="project-subtitle">Hormigón arquitectónico aparente, cristales térmicos y patios interiores de lava volcánica.</p>
+                <button class="btn-inspect-project glass-pill-cta-sm" data-project="bruma">
+                  <span>Ver Obra</span>
+                  <svg viewBox="0 0 20 20" fill="none" class="arrow-svg"><path d="M5.5 14.5L14.5 5.5M14.5 5.5H7.5M14.5 5.5V12.5" stroke="currentColor" stroke-width="1.8"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 2: Villa Serene -->
+        <article class="project-card" data-category="costero" data-reveal="fade-up" data-delay="150">
+          <div class="project-media-wrap" data-tilt>
+            <img src="IMAGENES/1.jpg" alt="Villa Serene Cliffside Residence" class="project-img">
+            <div class="project-overlay-glass">
+              <div class="project-top-meta">
+                <span class="glass-pill-sm">1,240 M²</span>
+                <span class="glass-pill-sm">COSTA DEL PACÍFICO</span>
+              </div>
+              <div class="project-bottom-info">
+                <h3 class="project-title">Villa Serene</h3>
+                <p class="project-subtitle">Volumetrías en cantiléver suspendidas sobre el acantilado con alberca infinita y terrazas hacia el horizonte.</p>
+                <button class="btn-inspect-project glass-pill-cta-sm" data-project="serene">
+                  <span>Ver Obra</span>
+                  <svg viewBox="0 0 20 20" fill="none" class="arrow-svg"><path d="M5.5 14.5L14.5 5.5M14.5 5.5H7.5M14.5 5.5V12.5" stroke="currentColor" stroke-width="1.8"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 3: Pabellón Estructural -->
+        <article class="project-card" data-category="proceso" data-reveal="fade-up" data-delay="300">
+          <div class="project-media-wrap" data-tilt>
+            <img src="IMAGENES/2.jpg" alt="Pabellón y estructura en construcción activa" class="project-img">
+            <div class="project-overlay-glass">
+              <div class="project-top-meta">
+                <span class="glass-pill-sm">620 M²</span>
+                <span class="glass-pill-sm">EN CONSTRUCCIÓN</span>
+              </div>
+              <div class="project-bottom-info">
+                <h3 class="project-title">Pabellón Estructural</h3>
+                <p class="project-subtitle">La belleza de la estructura en su estado honesto: trabes postensadas y encofrado artesanal.</p>
+                <button class="btn-inspect-project glass-pill-cta-sm" data-project="pabellon">
+                  <span>Ver Obra</span>
+                  <svg viewBox="0 0 20 20" fill="none" class="arrow-svg"><path d="M5.5 14.5L14.5 5.5M14.5 5.5H7.5M14.5 5.5V12.5" stroke="currentColor" stroke-width="1.8"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       CONTACTO & REDIRECCIÓN A WHATSAPP
+       ============================================== -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Manifiesto y Tarjeta de WhatsApp -->
+        <div class="contact-info-col" data-reveal="fade-up">
+          <span class="mono-badge">INICIAR UN PROYECTO</span>
+          <h2 class="contact-headline">Construyamos su próximo legado</h2>
+          <p class="contact-lead-text">
+            Recibimos un número selecto de encargos al año para asegurar una dedicación creativa y ejecutiva absoluta en cada residencia.
+          </p>
+
+          <!-- Tarjeta de Conversión Directa a WhatsApp -->
+          <div class="whatsapp-direct-card">
+            <div class="wa-icon-bubble">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="wa-svg">
+                <path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.97.57 3.805 1.558 5.353L2 22l4.743-1.522a10.003 10.003 0 0 0 5.288 1.553h.005c5.536 0 10.031-4.495 10.031-10.031 0-5.536-4.495-10.031-10.031-10.031zm5.85 14.186c-.244.686-1.42 1.328-1.95 1.385-.506.053-1.164.075-3.766-.998-2.6-1.073-4.248-3.723-4.378-3.896-.13-.173-1.055-1.404-1.055-2.678 0-1.274.664-1.902.9-2.161.236-.26.516-.324.687-.324.172 0 .344.002.495.008.158.007.371-.06.58.442.216.518.736 1.794.801 1.925.065.13.108.282.022.455-.086.173-.13.28-.26.433-.13.15-.27.337-.386.453-.13.13-.265.27-.114.53.151.26.67 1.106 1.436 1.79 1.01.9 1.86 1.18 2.12 1.31.26.13.41.108.56-.065.152-.173.65-.757.823-1.016.173-.26.346-.216.583-.13.237.086 1.512.713 1.77 1.016.26.303.26.606.173 1.016z"/>
+              </svg>
+            </div>
+            <div class="wa-card-text">
+              <span class="wa-status-pill">CANAL DIRECTO DISPONIBLE</span>
+              <h4 class="wa-card-title">Atención personalizada con el Director de Proyectos</h4>
+              <p class="wa-card-desc">Respuesta garantizada en menos de 2 horas en horario laboral.</p>
+            </div>
+            <a href="https://wa.me/525577527271?text=Hola%20Arca%20Terra%2C%20estoy%20interesado%20en%20desarrollar%20un%20proyecto%20residencial%20con%20su%20despacho." target="_blank" rel="noopener noreferrer" class="pill-cta-btn wa-link-btn">
+              <span>Iniciar conversación en WhatsApp</span>
+              <span class="cta-arrow-circle-sm">↗</span>
+            </a>
+          </div>
+
+          <!-- Sedes del Estudio -->
+          <div class="studio-locations-row">
+            <div class="loc-item">
+              <span class="mono-tag">ESTUDIO CDMX</span>
+              <p class="loc-address">Av. Paseo de las Palmas 780<br>Lomas de Chapultepec, CDMX</p>
+              <p class="loc-contact">+52 (55) 8000 4520</p>
+            </div>
+            <div class="loc-item">
+              <span class="mono-tag">ATELIER MADRID</span>
+              <p class="loc-address">Calle de Jorge Juan 14<br>Barrio de Salamanca, Madrid</p>
+              <p class="loc-contact">+34 910 882 140</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario Editorial Limpio -->
+        <div class="contact-form-col" data-reveal="fade-up" data-delay="150">
+          <div class="contact-glass-form-card glass-panel-heavy">
+            <h3 class="form-title">Consulta de Proyecto</h3>
+            <p class="form-desc">Complete los detalles de su predio o encargo y le contactaremos para una sesión exploratoria confidencial.</p>
+
+            <form id="architectForm" class="clean-editorial-form">
+              <div class="form-group">
+                <label for="clientName" class="form-label">Nombre Completo *</label>
+                <input type="text" id="clientName" name="name" required placeholder="Ej. Arq. / Lic. Fernando Morales" class="editorial-input">
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="clientEmail" class="form-label">Correo Electrónico *</label>
+                  <input type="email" id="clientEmail" name="email" required placeholder="fernando@dominio.com" class="editorial-input" autocomplete="email" inputmode="email">
+                </div>
+                <div class="form-group">
+                  <label for="clientPhone" class="form-label">Teléfono / Móvil *</label>
+                  <input type="tel" id="clientPhone" name="phone" required placeholder="+52 55 1234 5678" class="editorial-input" autocomplete="tel" inputmode="tel">
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="projectType" class="form-label">Tipo de Encargo</label>
+                  <select id="projectType" name="projectType" class="editorial-select">
+                    <option value="Residencia Unifamiliar Nueva">Residencia Unifamiliar Nueva</option>
+                    <option value="Villa Costera / Retiro">Villa Costera / Casa de Fin de Semana</option>
+                    <option value="Remodelación Mayor">Remodelación & Ampliación Mayor</option>
+                    <option value="Interiorismo & Curaduría">Interiorismo & Curaduría de Espacios</option>
+                    <option value="Desarrollo Inmobiliario Boutique">Desarrollo Inmobiliario Boutique</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="budgetRange" class="form-label">Presupuesto Estimado</label>
+                  <select id="budgetRange" name="budgetRange" class="editorial-select">
+                    <option value="15M - 30M MXN">$15M – $30M MXN ($750K – $1.5M USD)</option>
+                    <option value="30M - 60M MXN">$30M – $60M MXN ($1.5M – $3.0M USD)</option>
+                    <option value="60M+ MXN">$60M+ MXN ($3.0M+ USD)</option>
+                    <option value="Por Definir">Por Definir con el Despacho</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="projectLocation" class="form-label">Ubicación del Terreno o Propiedad</label>
+                <input type="text" id="projectLocation" name="location" placeholder="Ej. Valle de Bravo / Pedregal / Los Cabos / Madrid" class="editorial-input">
+              </div>
+
+              <div class="form-group">
+                <label for="projectDetails" class="form-label">Descripción del Proyecto</label>
+                <textarea id="projectDetails" name="message" rows="3" placeholder="Comparta dimensiones del predio, programa de necesidades o aspiraciones arquitectónicas..." class="editorial-textarea"></textarea>
+              </div>
+
+              <!-- Botones de Acción -->
+              <div class="form-action-row">
+                <button type="submit" class="pill-cta-btn glass-pill-cta-solid" id="submitFormBtn">
+                  <span>Enviar Formulario</span>
+                  <span class="cta-arrow-circle">→</span>
+                </button>
+                <button type="button" class="glass-pill-sm wa-instant-btn" id="waFastBtn" title="Envía estos datos de manera directa e inmediata a WhatsApp">
+                  <span>Enviar por WhatsApp</span>
+                </button>
+              </div>
+
+              <div class="form-status-msg" id="formStatusMsg" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================================
+       PIE DE PÁGINA (FOOTER)
+       ============================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-row">
+        <div class="footer-brand-box">
+          <div class="footer-logo">
+            <svg class="monogram-icon-lg" viewBox="0 0 36 36" fill="none">
+              <rect x="7" y="7" width="15" height="15" rx="3" transform="rotate(45 7 7)" stroke="currentColor" stroke-width="1.8"/>
+              <rect x="19" y="7" width="15" height="15" rx="3" transform="rotate(45 19 7)" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+            <span class="footer-title">arca terra</span>
+          </div>
+          <p class="footer-tagline">Estudio de Arquitectura Contemporánea & Desarrollo Residencial Premium</p>
+        </div>
+
+        <div class="footer-nav-col">
+          <span class="footer-col-title">NAVEGACIÓN</span>
+          <ul class="footer-links-list">
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#about">Nosotros</a></li>
+            <li><a href="#why-us">Filosofía</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#portfolio">Portafolio</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <span class="footer-col-title">SEDES & CONTACTO</span>
+          <p class="footer-meta-text">CDMX: Palmas 780, Lomas</p>
+          <p class="footer-meta-text">Madrid: Jorge Juan 14, Salamanca</p>
+          <p class="footer-meta-text">contacto@arcaterra.com</p>
+        </div>
+
+        <div class="footer-newsletter-col">
+          <span class="footer-col-title">MONOGRÁFICO EDITORIAL</span>
+          <p class="footer-meta-text">Suscríbase a nuestra publicación bimestral sobre arquitectura bioclimática y nuevos proyectos.</p>
+          <form class="newsletter-pill-form" onsubmit="event.preventDefault(); alert('Gracias por suscribirse al monográfico de Arca Terra.');">
+            <input type="email" placeholder="correo@ejemplo.com" required class="newsletter-input">
+            <button type="submit" class="newsletter-btn" aria-label="Suscribirse">
+              <span>→</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <p class="copyright-text">© 2026 ARCA TERRA ARQUITECTURA. TODOS LOS DERECHOS RESERVADOS.</p>
+        <div class="footer-legal-links">
+          <a href="#" onclick="alert('Aviso de Privacidad: Arca Terra protege sus datos conforme a la legislación vigente.'); return false;">Aviso de Privacidad</a>
+          <span class="sep">•</span>
+          <a href="#" onclick="alert('Términos Legales de Arca Terra.'); return false;">Términos & Condiciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Interactivo de Proyecto (Lightbox) -->
+  <div class="project-modal" id="projectModal" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-container glass-panel-heavy">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar ventana modal">✕</button>
+      <div class="modal-body" id="modalBodyContent">
+        <!-- Inyectado vía JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
